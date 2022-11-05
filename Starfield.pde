@@ -65,6 +65,14 @@ class OddballParticle extends Particle//inherits from Particle
     ellipse((float)myX+32,(float)myY+20,10,10);
     ellipse((float)myX+25,(float)myY+37,10,10);
     popMatrix();
+    if(mouseX > myX)
+      myX = myX + (int)(Math.random()*5)-1;
+    else
+      myX = myX + (int)(Math.random()*5)-3;
+    if(mouseY > myY)
+      myY = myY + (int)(Math.random()*5)-1;
+    else
+      myY = myY + (int)(Math.random()*5)-3;
     //stroke(myColor);
     //strokeWeight(14);
     //strokeJoin(ROUND);
@@ -134,10 +142,10 @@ void setup()
   //your code here
   size(500,500);
   ball = new Particle[250];
-  for(int i = 2; i<250; i++){
+  for(int i = 5; i<250; i++){
     ball[i] = new Particle();
   }
-  for(int i = 0; i<2; i++){
+  for(int i = 0; i<5; i++){
     ball[i] = new OddballParticle();
   }
 }
